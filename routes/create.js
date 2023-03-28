@@ -1,13 +1,10 @@
 let express = require('express');
 let router = express.Router();
 
-router.get("/", (req, res) => {
-    res.send("Create Base Route");
-});
+const createController = require('../controllers/createController');
+router.get("/", createController.createDetails); // http://localhost:4000/create
 
-router.get("/nickname", (req, res) => {
-    res.json("Create NickName Route");
-});
+router.get("/nickname", createController.createNickName); // http://localhost:4000/create/nickname
 
 // router.post();
 
